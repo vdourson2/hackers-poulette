@@ -7,6 +7,62 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 <body>
-    
+    <header>
+        <img src="assets/img/hackers-poulette-logo.png" alt="Logo">
+        <h1>Hackers Poulette</h1>
+    </header>
+    <h2>Contact support</h2>
+    <form id="form" action="php/index.php" method="post">
+        <fieldset>
+            <legend>Personal information</legend>
+            <div>
+                <label for="name">Name : </label>
+                <input type="text" id="name" name="name"/>
+            </div>
+            <div>
+                <label for="lastname">Lastname : </label>
+                <input type="text" id="lastname" name="lastname"/>
+            </div>
+            <div>
+                <label for="gender">Gender : </label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="email">Lastname : </label>
+                <input type="email" id="email" name="email"/>
+            </div>
+            <div>
+                <label for="country">Country : </label>
+                <select id="country" name="country">
+                    <option value="belgium">Belgium</option>
+                    <option value="france">France</option>
+                    <option value="netherlands">Netherlands</option>
+                    <option value="germany">Germany</option>
+                    <option value="luxemburg">Luxemburg</option>
+                </select>
+            </div>   
+        </fieldset>
+        <fieldset>
+            <legend>Your question</legend>
+            <div>
+                <label for="subject">Subject : </label>
+                <select id="subject" name="country" value="Other">
+                    <option value="broken">Broken or missing pieces</option>
+                    <option value="information">Need of information</option>
+                    <option value="other" selected>Other</option>
+                </select>
+            </div> 
+            <div>
+                <label for="message">Your message : </label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+        </fieldset>
+        <Button type="submit">Submit</Button>
+    </form>
+
 </body>
 </html>
