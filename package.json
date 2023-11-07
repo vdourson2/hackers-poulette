@@ -4,9 +4,13 @@
   "description": "Becode project :  create a fully-functioning online \"contact support\" form in PHP.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch" : "npx tailwindcss -i ./assets/style.css -o dist/style.css --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
 }
