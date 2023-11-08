@@ -1,17 +1,18 @@
 <?php 
 
 //For testing :
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
 
 $error = [];
 $genders = ['male','female','other'];
+$countries = ['belgium','france','netherlands','germany','luxemburg'];
 
 
 if (isset($_POST['submit']) AND (empty($_POST['age']))) {
     //The input "age" is for the honeypot (to avoid spam) 
-    
+
     //-------SANITIZE AND VALIDATE NAME------------------
     //If the name is completed
     if (isset($_POST['name'])){
@@ -70,6 +71,41 @@ if (isset($_POST['submit']) AND (empty($_POST['age']))) {
     //The email is not completed
     } else {
         $error['email'] = 'You must complete your email';
+    }
+
+    //-------SANITIZE AND VALIDATE COUNTRY------------------
+    //If the country is completed
+    if (isset($_POST['country'])){
+        $country = $_POST['country'];
+        //Check if the country belongs to the array of countrys
+        $countryOk = false;
+        foreach ($countries as $c){
+            if ($country == $c) {
+                $countryOk = true;
+            };
+        }
+        //If the country doesn't belong to the array of countrys
+        if ($countryOk == false) {
+            $country = NULL;
+            $error['country'] = 'Invalid country. Please enter a valid country';
+        }
+    //If the country is not completed
+    } else {
+        $error['country']= 'You must complete your country';
+    }
+
+
+    //-------SANITIZE AND VALIDATE MESSAGE------------------
+    //If the message is completed
+    if (isset($_POST['message'])){
+        $message = htmlspecialchars($_POST['message']);
+        //The sanitized message is too long
+        if (strlen($message)>500){
+            $error['message'] = 'Your message is too long. Please reduce your message (max 500 caracters).';
+        }
+    //If the message is not completed
+    } else {
+        $error['message']= 'You must complete your message';
     }
 
     //---------EXECUTE---------------

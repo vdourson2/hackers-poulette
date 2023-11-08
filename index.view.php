@@ -49,14 +49,15 @@
                     <input class="border-2 border-gray-300 rounded" type="email" id="email" name="email" value="<?= $email ?? '';?>"required/>
                 </div>
                 <div class="personal__wrapCountry">
+                    <p class="text-colTurquoise font-bold"><?= $error['country'] ?? ''; ?></p>
                     <label for="country">Country : </label>
                     <select class="py-1 px-2" id="country" name="country" required>
-                        <option value="" selected>Country</option>
-                        <option value="belgium">Belgium</option>
-                        <option value="france">France</option>
-                        <option value="netherlands">Netherlands</option>
-                        <option value="germany">Germany</option>
-                        <option value="luxemburg">Luxemburg</option>
+                        <option value="" <?= isset($country) ? '' : 'selected';?>>Country</option>
+                        <option value="belgium" <?= (isset($country) AND ($country == "belgium")) ? 'selected' : '';?> >Belgium</option>
+                        <option value="france" <?= (isset($country) AND ($country == "france")) ? 'selected' : '';?> >France</option>
+                        <option value="netherlands" <?= (isset($country) AND ($country == "netherlans")) ? 'selected' : '';?> >Netherlands</option>
+                        <option value="germany" <?= (isset($country) AND ($country == "germany")) ? 'selected' : '';?> >Germany</option>
+                        <option value="luxemburg" <?= (isset($country) AND ($country == "luxemburg")) ? 'selected' : '';?> >Luxemburg</option>
                     </select>
                 </div>   
             </fieldset>
@@ -71,8 +72,9 @@
                     </select>
                 </div> 
                 <div class="question__wrapMessage flex flex-col">
+                    <p class="text-colTurquoise font-bold"><?= $error['message'] ?? ''; ?></p>
                     <label for="message">Your message : </label>
-                    <textarea class="border-2 border-gray-300 rounded" name="message" id="message" cols="30" rows="6"></textarea>
+                    <textarea class="border-2 border-gray-300 rounded" name="message" id="message" cols="30" rows="4" required><?= $message ?? '';?></textarea>
                 </div>
             </fieldset>
             <button class="block text-2xl px-3 py-2 button w-32 text-white bg-colTurquoise focus:ring-4 focus:ring-blue-300 font-medium rounded-lg" type="submit" name="submit" value="submit">Submit</Button>
