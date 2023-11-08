@@ -43,7 +43,7 @@ Virginie Dourson
 2 days
 
 ## Progression
-WIP
+Finished
 
 ## Github page
 Not deployed
