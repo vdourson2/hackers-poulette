@@ -6,6 +6,15 @@ Becode project :  create a fully-functioning online "contact support" form in PH
 The company Hackers Poulette ™ sells Raspberry Pi accessory kits to build your own. They want to allow their users to contact their support team. Your mission is to create a fully-functioning online "contact support" form, in PHP. It must display a contact form and process the received answer (sanitize, validate, answer the user).
 NOTE: All field, except subject, have to be completed. The field subject takes a default value of Other.
 
+The form should be comprised of:
+
+* name and lastname
+* gender
+* email address
+* country
+* subject (3 possibilities)
+* message
+
 Must have:
 
 * the project repository must include a low-fidelity mock-up
