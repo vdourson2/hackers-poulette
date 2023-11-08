@@ -28,7 +28,7 @@ Must have:
 * implement a honeypot anti spam technique.
 
 ## Printscreen
-![Printscreen of the project](assets/Printscreen.png)
+![Printscreen of the project](assets/printscreen.png)
 
 ## Used languages
 HTML, Tailwind, PHP, phpmailer

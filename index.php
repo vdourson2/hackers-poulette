@@ -13,7 +13,7 @@ $countries = ['belgium','france','netherlands','germany','luxemburg'];
 if (isset($_POST['submit']) AND (empty($_POST['age']))) {
     //The input "age" is for the honeypot (to avoid spam) 
 
-    //-------SANITIZE AND VALIDATE NAME------------------
+    //-------SANITIZE AND VALIDATE NAME------------------ 
     //If the name is completed
     if (isset($_POST['name'])){
         $name = htmlspecialchars($_POST['name']);
