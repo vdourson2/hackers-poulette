@@ -16,7 +16,8 @@
     </header>
     <h2 class="text-3xl p-8 pb-4 font-fontBellota font-bold">Contact support</h2>
     
-    <div class="wrapForm flex item-center justify-center font-fontBellota text-lg">
+    <div class="wrapForm gap-3 flex flex-col items-center justify-center font-fontBellota text-lg">
+        <p class="text-colTurquoise font-bold"><?= $checkout ?? ''; ?></p>
         <form class="form flex flex-col items-center justify-center gap-3 max-w-lg" id="form" name="form" autocomplete="off" action="index.php" method="post">
             <fieldset class="personal border-2 border-colTurquoise p-4 rounded-md flex flex-col gap-2 w-full text-xl">
                 <legend class="personal__legend font-bold text-2xl">Personal information</legend>

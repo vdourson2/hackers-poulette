@@ -26,7 +26,7 @@ try {
     $mail->Body = "Subject : {$_POST['subject']}\n";
     $mail->Body .= "Message : {$_POST['message']}\n";
     $mail->send();
-    echo 'Message has been sent';
+    $checkout = "Thank you for your message. We will respond as soon as possible";
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    $checkout = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
