@@ -1,5 +1,6 @@
 <?php 
 
+//For testing :
 echo '<pre>';
 print_r($_POST);
 echo '</pre>';
@@ -8,7 +9,9 @@ $error = [];
 $genders = ['male','female','other'];
 
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) AND (empty($_POST['age']))) {
+    //The input "age" is for the honeypot (to avoid spam) 
+    
     //-------SANITIZE AND VALIDATE NAME------------------
     //If the name is completed
     if (isset($_POST['name'])){
@@ -60,14 +63,10 @@ if (isset($_POST['submit'])) {
     //If the email is completed
     if (isset($_POST['email'])){
         $email=filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
-        //The sanitized email is valid
+        //The sanitized email is not valid
         if (filter_var($email,FILTER_VALIDATE_EMAIL) == false){
             $error['email'] = 'Invalid email. Pease enter a valid email.';
         }
-        //The sanitized email is not valid 
-        // else {
-        //     $error_email = 'Your email is not valid'; 
-        // }
     //The email is not completed
     } else {
         $error['email'] = 'You must complete your email';
@@ -80,7 +79,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-
+//For testing :
 // echo '<pre>';
 // print_r($error);
 // echo '</pre>';

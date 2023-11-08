@@ -29,6 +29,10 @@
                     <label for="lastname">Lastname : </label>
                     <input class="border-2 border-gray-300 rounded" type="text" id="lastname" name="lastname" value="<?= $lastname ?? '';?>" required />
                 </div>
+                <div class="hidden">
+                    <label for="age">Age : </label>
+                    <input class="border-2 border-gray-300 rounded" type="text" id="age" name="age" />
+                </div>
                 <div class="personal__wrapGender">
                     <p class="text-colTurquoise font-bold"><?= $error['gender'] ?? ''; ?></p>
                     <label for="gender">Gender : </label>
