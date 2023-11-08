@@ -24,7 +24,7 @@ Must have:
 * display the error message near the correct input field
 * the error message must be readable (helpful to users)
 * the form has to be sanitised and validated (server side)
-* if all required inputs are valid, the script should respond by email to a given address
+* if all required inputs are valid, the script should respond by email to a given address   
 * implement a honeypot anti spam technique.
 
 ## Printscreen
